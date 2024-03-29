@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력폼 실습</title>
+</head>
+<body>
+    <!-- action에 입력 값을 전달받아 처리할 서버(정확히는 서버 상의 프로그램)의 URL을 지정 -->
+
+    <form action="https://search.naver.com/search.naver", method="get">
+        <fieldset>
+            <legend>네이버 검색</legend>
+            <input type="text" placeholder="전화번호">
+            <button onclick="alert('인증했다치고')">인증</button>
+            <br>
+            <input type="text" name="query" id="" required="검색어를 입력하세요.">
+            <button type="submit">검색</button>
+        </fieldset>
+    </form>
+
+    <form action="" method="post">
+        <fieldset>
+            <legend>기본 정보</legend>
+            <ul>
+                <li>이름 : <input name="name" type="text" placeholder="설명을 적을수도 있어요"></li>
+                <li>나이 : <input name="age" type="number" value="0" min="0" max="150"></li>
+                <li>비밀번호 : <input name="password" type="password"></li>
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>부가정보</legend>
+            <li>
+                <!-- 선택지 만들기 -->
+                거주지역
+                <select name="loc" id="" selec>
+                    <option value="서울">서울</option>
+                    <option value="경기">경기</option>
+                    <option value="경남">경남</option>
+                    <option value="제주">제주</option>
+                </select>
+            </li>
+            <li>
+                <!-- 체크박스 만들기 -->
+                <!-- input의 id와 label의 for를 연결 -->
+                스킬:
+                <input type="checkbox" name="tec" id="cb1" value="1">
+                <label for="cb1">HTML</label>
+                <input type="checkbox" name="tec" id="cb2" value="2">
+                <label for="cb2">CSS</label>
+                <input type="checkbox" name="tec" id="cb3" value="3">
+                <label for="cb3">JS</label>
+            </li>
+            <li>
+                <!-- 라디오버튼 만들기 -->
+                과정:
+                <input type="radio" name="과" id="rd1">
+                <label for="">통학</label>
+                <input type="radio" name="과" id="rd2">
+                <label for="">기숙사</label>
+                <input type="radio" name="과" id="rd3">
+                <label for="">자퇴</label>
+            </li>
+            <li>
+                과티 색상:
+                <input type="color" name="" id="">
+            </li>
+            <li>
+                이메일:
+                <input type="email" value="example@sample.com" name="" id="">
+            </li>
+            <li>
+                파일 업로드:
+                <input type="file" name="" id="">
+            </li>
+            <li>
+                일자:
+                <input type="date" name="" id="">
+            </li>
+            <li>
+                시간:
+                <input type="time" name="" id="">
+            </li>
+            <li>
+                시간:
+                <input type="" name="" id="">
+            </li>
+
+        </fieldset>
+        <fieldset>
+            <legend>자기소개</legend>
+            <!-- textarea 영역이 조절되는 입력창 -->
+            <textarea placeholder="200자 이상 500자 이하" name="" id="" 
+            cols="50" rows="10" minlength="200" maxlength="500">줄 내림에 
+            주의하세요</textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>설문</legend>
+            <ul>
+                <li>
+                    프로젝트 진척도:
+                    <progress value="50" max="100"></progress>
+                </li>
+                <li>
+                    프로젝트 진척도:
+                    <input type="range" name="" id="" value="50" max="100">
+                </li>
+            </ul>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">제출</button>
+        <button type="reset">리셋</button>
+        <button type="menu">메뉴</button>
+        <button type="button">버튼</button>
+
+
+    </form>
+    
+</body>
+</html>

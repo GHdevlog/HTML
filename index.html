@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            table{
+                border: 3px solid red;
+                border-collapse: collapse;
+            }
+
+            td{
+                border: 1px solid blue;
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                font-size: 20pt;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>제목1</h1>
+        <h2>제목2</h2>
+        <h3>제목3</h3>
+        <h4>제목4</h4>
+        <h5>제목5</h5>
+        <h6>제목6</h6>
+
+        <hr color="purple" size="10">
+
+        <p>문단을 나타내는 p태그</p>
+
+        <img width="300" src="https://cdn.pixabay.com/photo/2023/12/04/05/54/ferris-wheel-8428738_1280.jpg" alt="관람차 사진">
+
+        <hr color="purple" size="10">
+
+        <br><!-- 줄 바꿈 -->
+        <p>문단</p>
+        <p>나누기</p>
+        <p>문단 내에서 <br> 나누기</p>
+
+        <a href="https://www.naver.com"> 사이트 이름(네이버) </a>
+        <br>
+        <a href="https://www.google.com"> 
+            <img width="300" src="https://cdn.pixabay.com/photo/2023/12/04/05/54/ferris-wheel-8428738_1280.jpg" alt="">
+        </a>
+
+
+        <!-- 순서 없는 리스트 -->
+        <ul>
+            <li>수박</li>
+            <li>배</li>
+            <li>멜론</li>
+        </ul>
+
+        <!-- 순서 있는 리스트 -->
+    
+        <ol start="1", type="a">
+            <li>수박</li>
+            <li>배</li>
+            <li>멜론</li>
+        </ol>
+
+        <hr color="purple" size="10">
+
+        <!-- 테이블 만들기 -->
+        <br>
+        <table>
+            <tr>
+                <td colspan="5">1</td>
+            </tr>
+            <tr>
+                <td rowspan="4" >6</td>
+                <td colspan="4">7</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td rowspan="2">13</td>
+                <td>14</td>
+                <td rowspan="3">15</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td colspan="2">22</td>
+                <td>24</td>
+            </tr>
+        </table>
+
+    </body>
+</html>

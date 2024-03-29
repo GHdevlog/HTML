@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block과 Inline</title>
+    <style>
+        .bold{
+            font-size: 20pt;
+            color: crimson;
+        }
+        /* div{
+            display: block;
+            border: 1.5px solid blue;
+            width: 300px;
+            height: 100px;
+        } */
+        span{
+            display: inline-block;
+            border: 1.5px solid #d34f4f;
+        }
+        .box{
+            border: solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>제목</h1>
+    <p>본문</p>
+    앞 <a href="">이동</a> 뒤
+    <img src="" alt="이미지 대체"><br>
+    <div class="box">
+        <div>
+            이름: <input type="text" placeholder="input1">
+        </div>
+        <div>
+            취미: <input type="text" placeholder="input2">
+        </div>
+    </div>
+    <div>
+        DIV 태그 : 대표적인 Block 태그
+    </div>
+    <div>
+        DIV 태그 : 대표적인 Block 태그
+    </div>
+    <div>
+        DIV 태그 : 대표적인 Block 태그
+    </div>
+
+    <span>SPAN : inline 속성</span>
+    <span>SPAN : inline 속성</span>
+    <span>SPAN : inline 속성</span>
+
+    <span>나는 <span class="bold">뭉치</span>야 이 개가 와이라노</span>
+</body>
+</html>
