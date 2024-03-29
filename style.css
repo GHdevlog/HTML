@@ -13,10 +13,18 @@
     font-style: italic;
 }
 #content {
+    color: red;
     border: 2px solid chocolate;
+    /* 박스 밖의 간격 */
+    margin: auto;
+    /* 박스 안의 간격 */
+    padding: 10px;
+    /* 박스의 크기 */
+    width: 300px;
+    height: 300px;
 }
 /* #content p : 자손 선택자 */
 /* #content>p : 자식 선택자 */
-#content p {
-    color: chocolate;
+#content>p {
+    color: rgb(30, 210, 39);
 }
