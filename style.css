@@ -1,0 +1,22 @@
+/* red 클래스가 붙은 h1 요소 */
+.red{
+    color: red;
+}
+/* bold 클래스가 붙은 요소 */
+.bold{
+    font-weight: bold;
+}
+/* id="mainTitle" 또는 h2 요소 */
+#mainTitle, h2{
+    color: darkblue;
+    font-weight: bold;
+    font-style: italic;
+}
+#content {
+    border: 2px solid chocolate;
+}
+/* #content p : 자손 선택자 */
+/* #content>p : 자식 선택자 */
+#content p {
+    color: chocolate;
+}
