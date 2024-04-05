@@ -1,0 +1,36 @@
+.org {
+    color: orange;
+}
+#title {
+    text-align: center;
+    padding: 20px;
+    margin: 50px;
+    border-bottom: 3px solid purple;
+}
+#sTitle {
+    color: red;
+}
+#content {
+    width: 500px;
+    height: 450px;
+    border: 5px groove gray;
+    border-radius: 10%;
+    margin: auto;
+    margin-top: 20vh;
+}
+#content * {
+    box-sizing: border-box;
+}
+#content>div {
+    margin: auto;
+    width: 400px;
+    margin-bottom: 20px;
+}
+#content input {
+    width: 100%;
+    font-size: 20pt;
+}
+.login-btn {
+    width: 400px;
+    font-size: 20pt;
+}

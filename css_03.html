@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background</title>
+    <style>
+        
+        @font-face {
+            font-family: 'BagelFatOne-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_JAMO@1.0/BagelFatOne-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        #content {
+            background: url("https://cdn.pixabay.com/photo/2014/11/03/11/06/hippo-515027_1280.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-clip: content-box;
+            padding: 20px;
+            border: 2px solid red;
+            height: 500px;
+            width: 500px;
+
+            display: flex;
+            align-items: center; /* 세로 방향 가운데 정렬 */
+            justify-content: center; /* 가로 방향 가운데 정렬 */
+        }
+        body {
+            height: 100vh;
+            background: url("https://wikidocs.net/images/page/191680/024_2_%EB%B6%88%EB%8F%85%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            
+            display: flex;
+            align-items: center; /* 세로 방향 가운데 정렬 */
+            justify-content: center; /* 가로 방향 가운데 정렬 */
+        }
+        #title {
+            /* text-align: center; */
+            font-family: 'BagelFatOne-Regular';
+            font-size: 60px;
+            color: white;
+            /* 가로, 세로, 뿌연 정도, 색상 */
+            text-shadow: 10px 10px 5px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div id="title">
+            Hippo
+        </div>
+    </div>
+</body>
+</html>
