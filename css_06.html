@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 스타일시트 -->
+    <style>
+        /* 기본 스타일 */
+        html,
+        body {
+            height: 100%;
+            margin: 0px;
+            /* 스크롤 감추기 */
+            overflow: hidden;
+        }
+    
+        body {
+            background-color: #02233b;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 배경 이미지 */
+            background-image: url("https://firstcoding-kr.github.io/deep-web/html/poster_example/mic.png");
+            background-repeat: no-repeat;
+            background-position: bottom right;
+        }
+    
+        /* 콘텐츠 영역 */
+        #content {
+            width: 600px;
+            margin: auto;
+        }
+    
+        /* 제목 스타일 */
+        .title {
+            color: white;
+        }
+    
+        /* 부제목 스타일 */
+        .subTitle {
+            color: yellowgreen;
+            font-style: italic;
+        }
+    
+        /* 방송 중 이미지 스타일 */
+        .on-air {
+            width: 400px;
+            text-align: center;
+        }
+    
+        /* 섹션 제목 스타일 */
+        #section>h3 {
+            color: skyblue;
+        }
+    
+        /* 섹션 내용 스타일 */
+        #section>div {
+            padding-left: 30px;
+            color: white;
+            font-family: "바탕체";
+        }
+    
+        /* 마이크 이미지 위치 */
+        #mic {
+            margin-top: auto;
+            text-align: right;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div>
+        <!-- 제목 -->
+        <h1 class="title">대학 언론사 수습기자 모집</h1>
+        <!-- 부제목 -->
+        <h2 class="subTitle">신입생 여러분을 기다립니다</h2>
+        <!-- 방송 중 이미지 -->
+        <div class="on-air">
+            <img src="onair.png" width=100px height=100px alt="">
+        </div>
+        <!-- 모집분야 섹션 -->
+        <div id="section">
+            <!-- 제목 -->
+            <h3>모집분야</h3>
+            <div>
+                <!-- 내용 -->
+                <p>아나운서(0명) : 학내 소식을 라디오 방송으로 보도</p>
+                <p>오프닝쇼프로듀서(0명) : 라디오 방송 기획, 제작</p>
+                <p>엔지니어(0명): 라디오 방송 녹음 및 편집</p>
+            </div>
+        </div>
+        <!-- 혜택 섹션 -->
+        <div id="section">
+            <!-- 제목 -->
+            <h3>혜택</h3>
+            <div>
+                <!-- 내용 -->
+                <p>수습기자 활동 중 소정의 활동비 지급</p>
+                <p>정기자로 진급하면 장학금 지급</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+
+            width: 100%;
+            /* 최소크기 유지*/
+            min-width: 800px;
+            padding-bottom: 0px; /* footer가 화면을 가리지 않도록 body의 하단 패딩을 추가합니다. */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+        }
+        footer {
+            margin: 0px;
+            margin-top: auto; /* 푸터를 항상 화면 하단에 위치하도록 합니다. */
+            width: 100%; /* 화면 전체 너비를 사용합니다. */
+            background-color: #f5f6f7;
+            padding: 20px;
+            text-align: center;
+        }
+        footer .list_corp {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .list_corp>li:last-child {
+            border-right: none;
+        }
+        .corp_item {
+            display: inline;
+            padding: 10px;
+            text-align: center;
+            border-right: 1px solid black;
+        }
+        .corp_item a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+    <div>1234</div>
+
+    <footer>
+        <div class="corp_area">
+            <h3 class="blind">네이버 정책 및 약관</h3>
+            <ul class="list_corp">
+                <li class="corp_item"><a target="_blank" href="https://www.navercorp.com/">회사소개</a></li>
+                <li class="corp_item"><a target="_blank" href="https://recruit.navercorp.com/">인재채용</a></li>
+                <li class="corp_item"><a target="_blank" href="https://www.navercorp.com/naver/proposalInquire">제휴제안</a>
+                </li>
+                <li class="corp_item"><a target="_blank" href="https://www.naver.com/policy/service.html">이용약관</a></li>
+                <li class="corp_item"><a target="_blank"
+                        href="https://www.naver.com/policy/privacy.html"><strong>개인정보처리방침</strong></a></li>
+                <li class="corp_item"><a target="_blank"
+                        href="https://www.naver.com/policy/youthpolicy.html">청소년보호정책</a></li>
+                <li class="corp_item"><a target="_blank" href="https://policy.naver.com/policy/service_group.html">네이버
+                        정책</a></li>
+                <li class="corp_item"><a target="_blank" href="https://help.naver.com/">고객센터</a></li>
+            </ul>
+            <address class="addr"><a target="_blank" href="https://www.navercorp.com/">ⓒ NAVER Corp.</a></address>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+        }
+        #mTitle {
+            display: none;
+        }
+        /* 페이지 인쇄시의 스타일 */
+        @media print{
+            body {
+                background-color: white;
+                color: black;
+            }
+
+        }
+        
+        /* 화면 사이즈에 따른 스타일 */
+        @media screen and (max-width: 480px) {
+            body {
+                background-color: aquamarine;
+                color: black;
+            }
+            #title {
+                display: none;
+            }
+            #mTitle {
+                display: block;
+            }
+
+        }
+        /* 제목에 애니메이션 적용 */
+        #title {
+            width: 100px;
+            text-align: center;
+            animation-name: rotate;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+            animation-timing-function:linear;
+            animation-iteration-count: infinite;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+        }
+
+        #circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            border: 2px solid gray;
+            border-top: whitesmoke;
+            animation-name: rotate;
+            animation-duration: 0.8s;
+            animation-fill-mode: forwards;
+            animation-timing-function:linear;
+            animation-iteration-count: infinite;
+        }
+    
+        
+        /* 체크박스가 체크되면 라벨에 스타일 적용 */
+        input[type="checkbox"]:checked + label {
+            color: red;
+            font-weight: bold;
+        }
+        
+        /* 입력 요소에 포커스가 되었을 때 테두리 스타일 적용 */
+        input:focus {
+            outline: 1px solid blue;
+        }
+
+        /* 리스트의 짝수 번째 아이템에 색상 스타일 적용 */
+        #list li:nth-child(2n) {
+            color: red;
+        }
+
+        /* 페이드 인 애니메이션 정의 */
+        @keyframes fade {
+            0% {
+                transform: translateY(100px);
+                opacity: 0%;
+            }
+            100% {
+                color: blue;
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">갓겜</h1>
+    <h1 id="mTitle">모바일 제목임</h1>
+    <img id="circle" src="data:image/jpeg;base64,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" alt="">
+
+    <div>
+        <input type="checkbox" name="" id="check1">
+        <label for="check1">조식</label>
+        <input type="checkbox" name="" id="check2">
+        <label for="check2">중식</label>
+        <input type="checkbox" name="" id="check3">
+        <label for="check3">석식</label>
+
+        <input type="text" name="" id="">
+
+        <ul id="list">
+            <li> something</li>
+            <li> something</li>
+            <li> something</li>
+            <li> something</li>
+            <li> something</li>
+        </ul>
+    </div>
+</body>
+</html>
