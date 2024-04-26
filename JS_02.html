@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <input id="input" type="text">
+    <br>
+    <button onclick="getInputText()">input 값 읽기</button>
+    <button onclick="getInputPrompt()">prompt 값 읽기</button>
+    <button onclick="alert(text)">text 변수</button>
+    
+    <button onclick="checkLen()">제출</button>
+
+    <script>
+        function getInputText(){
+            var text = document.getElementById('input').value ;
+            alert(text);
+        }
+        function getInputPrompt(){
+            var text = window.prompt();
+            alert(text);
+        }
+        function checkLen(){
+            var text = document.getElementById('input').value ;
+
+            console.log(text);
+
+            if (text.length <5){
+                alert("5글자 이상")
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #gugudanOutput {
+            border: 2px solid black; /* 경계선 설정 */
+            padding: 10px; /* 내부 여백 설정 */
+            font-size: 12px; /* 글자 크기 설정 */
+            background-color: #f9f9f9; /* 배경색 설정 */
+            white-space: pre-line; /* 개행 문자를 적용 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button onclick="printDoc()">인쇄</button>
+        <button onclick="closeTab()">창 닫기</button>
+        <button onclick="star()">콘솔에 별 찍기</button>
+    </div>
+    <div>
+        <label for="">
+            <input type="checkbox" name="" id="check">
+        </label>
+        <button onclick="run()">Run~</button>
+    </div>
+    
+    
+    <h1>구구단 출력하기</h1>
+    <button onclick="printGugudan()">구구단 출력</button>
+    <button onclick="clearGugudan()">비우기</button>
+    <div id="gugudanOutput"></div> <!-- 구구단 출력 위치 -->
+    
+    <script>
+        function printDoc() {
+            var yn = confirm("진짜로 할거임?");
+            if (yn) {
+                window.print();
+            } else {
+                alert("취소함");
+            }
+        }
+        function closeTab() {
+            window.close()
+        }
+        function run() {
+            var ch = document.getElementById("check");
+            if (ch.checked) {
+                alert("실행됨");
+            }
+        }
+        function star() {
+            for (let i = 1; i <= 5; i++) {
+                let stars = "";
+                for (let j = 0; j < 5 - i; j++) {
+                    stars += " ";
+                }
+                for (let j = 0; j < 2 * i - 1; j++) {
+                    stars += "*";
+                }
+                console.log(stars);
+            }
+        }
+
+        for (let i = 2; i < 10; i++) {
+            for (let j = 1; j < 10; j++) {
+                console.log(`${i} * ${j} = ${i * j}`);
+            }
+        }
+
+        function printGugudan() {
+            let output = ''; // 결과를 저장할 문자열 초기화
+            for (let i = 2; i <= 9; i++) {
+                for (let j = 1; j <= 9; j++) {
+                    output += `${i} x ${j} = ${i * j}<br>`; // 구구단 결과를 문자열에 추가
+                }
+                output += '<hr>'; // 각 단 끝에 수평선 추가
+            }
+        
+            document.getElementById('gugudanOutput').innerHTML = output; // 결과를 HTML에 삽입
+        }
+        function clearGugudan(){
+            document.getElementById('gugudanOutput').innerHTML = "";
+        }
+
+        var score = 95;
+
+        if (score > 90) {
+            console.log("A");
+        }
+
+    </script>
+</body>
+
+</html>
