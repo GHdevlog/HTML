@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 간단 댓글</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="input" placeholder="댓글을 입력해보세요">
+        <button onclick="writeComment()">등록</button>
+    </div>
+    <div>
+        <ul id="comments">
+            <li>등록됨</li>
+        </ul>
+    </div>
+    <script>
+        var comments = ['짬뽕', '국밥', '수육'];
+
+        function writeComment() {
+            // DOM
+            const comment = document.getElementById('input').value;
+            comments.push(comment);
+            drawList();
+        }
+
+        function drawList() {
+            let html = '';
+
+            for (var i = 0; i < comments.length; i++) {
+                // 템플릿 리터럴
+                html += <li>
+                    ${comments[i]}
+                    <button onclick="modifyComment(${i})">E</button>
+                    <button onclick="deleteComment(${i})">X</button>
+                </li>;
+            }
+
+            const cmtListEl = document.getElementById('comments');
+            cmtListEl.innerHTML = html;
+        }
+
+        function modifyComment(idx) {
+            var text = prompt('수정할 내용', comments[idx]);
+            if (!text) {
+                return;
+            }
+
+            comments[idx] = text;
+            drawList();
+        }
+
+        function deleteComment(idx) {
+            if (!confirm('지울까요?')) {
+                return;
+            }
+
+            comments.splice(idx, 1);
+            drawList();
+        }
+
+        drawList();
+
+
+    </script>
+</body>
+
+</html>

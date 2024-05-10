@@ -50,21 +50,21 @@
             <br>
             <h4 id="menu-name">7500원</h4>
             <h4 id="menu-name">700kcal</h4>
-        </div>`
+        </div>`;
 
-        var burgerCnt = 16
-        var colCnt = 5
-        console.log(rowCnt)
-        var blankCnt = colCnt - burgerCnt%colCnt
+        var burgerCnt = 16;
+        var colCnt = 5;
+        console.log(rowCnt);
+        var blankCnt = colCnt - burgerCnt % colCnt;
 
-        for (let i=0;i<burgerCnt;i++){
+        for (let i = 0; i < burgerCnt; i++) {
             document.getElementById('menus').innerHTML += template;
         }
-        for (let i=0;i<blankCnt;i++){
+        for (let i = 0; i < blankCnt; i++) {
             document.getElementById('menus').innerHTML += '<div></div>';
         }
 
-        
+
     </script>
 </body>
 

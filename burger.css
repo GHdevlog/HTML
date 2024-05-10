@@ -127,7 +127,6 @@ header img {
 
 #menus>div{
     display: flex;
-    width: 150px;
     justify-content: space-evenly;
 }
 

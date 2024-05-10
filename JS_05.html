@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뮤직 플레이어</title>
+    <style>
+        @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+        #playerBox {
+            width: 700px;
+            height: 200px;
+            border: 1px solid gray;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 2px 2px 15px lightslategray;
+        }
+        #albumart {
+            box-shadow: 2px 2px 15px lightslategray;
+        }
+        #albumart img {
+            width: 150px;
+        }
+        #info {
+            width: 450px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #title {
+            font-family: 'Noto Sans KR';
+            font-size: 2em;
+            font-weight: bold;
+        }
+        #lrc {
+            font-family: 'Noto Sans KR';
+            font-size: 1.3em;
+            margin: 10px 0px;
+        }
+        #player {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="playerBox">
+        <div id="albumart">
+            <img src="https://search.pstatic.net/common?type=n&size=174x174&quality=95&direct=true&src=https%3A%2F%2Fmusicmeta-phinf.pstatic.net%2Falbum%2F006%2F197%2F6197877.jpg%3Ftype%3Dr204Fll%26v%3D20210913233037" alt="">
+        </div>
+        <div id="info">
+            <div id="title">제목</div>
+            <div id="lrc">가사</div>
+            <audio id="player" src="music.m4a" controls></audio>
+        </div>
+    </div>
+    <script>
+        const title = '과제곡 (교수님 죄송합니다)';
+        const lrcData = ['(교수님 죄송합니다',
+            '죄송합니다 교수님 죄송합니다)',
+            '예 교수님 과제는 5개군요 (네?)',
+            '아뇨 불만 없어요 다 해올게요 (네)',
+            '심지어 창작 과제가 2개라구요? (아)',
+            '잠을 줄여서라도 해야죠 암요 (암요)',
+            '어 궁금하진 않지만',
+            '질문은 없냐 시기에 여쭤보자면',
+            '학생들에게 다',];
+
+        const lrcTimeData = [
+            14,
+            22.715233,
+            34.735892,
+            41.063261,
+            49.608472,
+            57.348211,
+            64.789686,
+            68.749263,
+            73.95813
+        ]
+
+        document.getElementById('title').innerText = title;
+        const player = document.getElementById('player');
+        const lrc = document.getElementById('lrc');
+
+        player.ontimeupdate = function(time) {
+            var time = player.currentTime;
+            var idx = 0;
+
+            for (var i=0; i<lrcData.length; i++) {
+                if (lrcTimeData[i] > time) {
+                    idx = i == 0 ? 0 : i-1;
+                    break;
+                }
+            }
+
+            console.log(idx, lrcData[idx]);
+            lrc.innerText = lrcData[idx];
+
+        }
+    </script>
+</body>
+</html>
