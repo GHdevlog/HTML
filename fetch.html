@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Test</title>
+</head>
+
+<body>
+    <button onclick="startFetch()">시작</button>
+    <button onclick="stopFetch()">중지</button>
+
+    <h1>실시간 검색어</h1>
+    <ol id="rank">
+
+    </ol>
+    <script>
+        var timer = 0;
+
+        function startFetch() {
+            timer = setInterval(logJSONData, 1000);
+        }
+        function stopFetch() {
+            clearInterval(timer);
+        }
+
+        async function logJSONData() {
+            //const response = await fetch("https://api.signal.bz/news/realtime");
+            const response = await fetch("http://127.0.0.1:5000/api/data");
+            const jsonData = await response.json()
+
+            var top10 = jsonData['top10']
+
+            var top10_info = "";
+
+            for (var i = 0; i < top10.length; i++) {
+                console.log(top10[i]['keyword']);
+                top10_info += `<li>${top10[i]['keyword']}</li>`;
+            }
+
+            document.getElementById('rank').innerHTML = top10_info;
+            let time = new Date();
+            console.log(time, time.getMilliseconds());
+        }
+
+    </script>
+</body>
+
+</html>

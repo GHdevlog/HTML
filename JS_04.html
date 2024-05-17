@@ -28,20 +28,20 @@
         }
 
         function drawList() {
-            let html = '';
-
-            for (var i = 0; i < comments.length; i++) {
-                // 템플릿 리터럴
-                html += <li>
-                    ${comments[i]}
-                    <button onclick="modifyComment(${i})">E</button>
-                    <button onclick="deleteComment(${i})">X</button>
-                </li>;
-            }
-
             const cmtListEl = document.getElementById('comments');
-            cmtListEl.innerHTML = html;
+            cmtListEl.innerHTML = '';
+        
+            for (var i=0; i<comments.length; i++) {
+                var li = document.createElement('li');
+        
+                li.innerText = comments[i];
+                li.innerHTML += `<button onclick="modifyComment(${i})">E</button>
+                                 <button onclick="deleteComment(${i})">X</button>`;
+        
+                cmtListEl.appendChild(li);
+            }
         }
+        
 
         function modifyComment(idx) {
             var text = prompt('수정할 내용', comments[idx]);

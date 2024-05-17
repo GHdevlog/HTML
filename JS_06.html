@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>댓글</title>
+</head>
+<body>
+    <input type="text" name="" id="text">
+    <button onclick="speak()">말하기</button>
+    <script>
+        function speak(){
+            let utterance = new SpeechSynthesisUtterance("Hello world");
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
