@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운터</title>
+</head>
+
+<body>
+    <h1>
+        <%= count %>
+    </h1>
+    <button onclick="resetCount()">초기화</button>
+    <button onclick="changeCount(prompt('변경할 값을 입력하세요:'))">수정</button>
+    <button onclick="plusCount()">1증가</button>
+    <script>
+        function resetCount() {
+            changeCount(0);
+        }
+
+        function changeCount(no) {
+            
+            if (isNaN(no) || no === "") {
+                alert("숫자를 입력하세요");
+                return;
+            }
+            const requestOptions = {
+                method: "PUT",
+                redirect: "follow"
+            };
+
+            fetch(`/api/count/${no}`, requestOptions)
+                .then((response) => response.json())
+                .then((result) => {
+                    console.log(result.count);
+                    location.reload();
+                })
+                .catch((error) => console.error(error));
+        }
+
+        function plusCount() {
+            changeCount(<%= count %> + 1);
+        }
+    </script>
+</body>
+
+</html>

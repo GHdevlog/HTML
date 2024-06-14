@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>댓글 페이지</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>
+        .grid {
+            grid-template-columns: 3fr 5fr 4fr;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <article>
+            <h1>글 써보기</h1>
+            <form action="/comments" method="post">
+                <div class="grid">
+                    <input type="text" name="nickname" placeholder="작성자">
+                    <input type="text" name="comments" placeholder="글 내용">
+                    <button type="submit">등록형 버튼</button>
+                </div>
+            </form>
+        </article>
+        <article>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">글번호</th>
+                        <th scope="col">작성자</th>
+                        <th scope="col">내용</th>
+                        <th scope="col">수정</th>
+                        <th scope="col">삭제</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let i = comments.length - 1; i >= 0; i--) { %>
+                        <tr>
+                            <td><%= comments[i].number %></th>
+                            <td><%= comments[i].nickname %></th>
+                            <td><%= comments[i].content %></td>
+                            <td><button type="button" onclick="editComment(<%= comments[i].number %>)">수정</button></td>
+                            <td><button type="button" onclick="deleteComment(<%= comments[i].number %>)">삭제</button></td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </article>
+    </main>
+    <script>
+        function deleteComment(no) {
+            const requestOptions = {method: "DELETE"};
+            
+            fetch(`/api/comments/${no}`, requestOptions)
+                .then((response) => response.text())
+                .then((result) => {
+                    console.log(result);
+                    location.reload();}) // 페이지 새로고침
+                .catch((error) => console.error(error));
+        }
+
+        function editComment(no){
+            location.assign(`/comments/${no}`);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 수정</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>
+        .grid {
+            grid-template-columns: 3fr 5fr 4fr;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <article>
+            <h1>글 수정</h1>
+            <form action="/api/comments/<%= comments[0].number %>?_method=PUT" method="POST">
+                <div class="grid">
+                    <input type="text" name="nickname" placeholder="작성자">
+                    <input type="text" name="comments" placeholder="글 내용">
+                    <button type="submit">수정</button>
+                    <button onclick="cancel()" type="button">취소</button>
+                </div>
+            </form>
+        </article>
+        <article>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">글번호</th>
+                        <th scope="col">작성자</th>
+                        <th scope="col">내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let i = comments.length - 1; i >= 0; i--) { %>
+                        <tr>
+                            <td><%= comments[i].number %></th>
+                            <td><%= comments[i].nickname %></th>
+                            <td><%= comments[i].content %></td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </article>
+        <script>
+            function cancel(){
+                location.assign(`/comments`);
+            }
+        </script>
+    </main>
+</body>
+
+</html>
